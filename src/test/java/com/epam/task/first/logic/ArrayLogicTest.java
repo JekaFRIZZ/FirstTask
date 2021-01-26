@@ -8,10 +8,12 @@ public class ArrayLogicTest {
 
     private ArrayLogic arrayLogic = new ArrayLogic();
 
+    private final double delta = 0.001;
+
     @Test
     public void testFindMaxShouldFindMaxWhenPositiveNumbersApplied() {
 
-        Array array = new Array(1,5,7);
+        Array<Integer> array = new Array<Integer>(1,5,7);
 
         int actual = arrayLogic.findMax(array);
 
@@ -21,7 +23,7 @@ public class ArrayLogicTest {
     @Test
     public void testFindMaxShouldFindMaxWhenNegativeNumbersApplied() {
 
-        Array array = new Array(-1,-5,-7);
+        Array<Integer> array = new Array<Integer>(-1,-5,-7);
 
         int actual = arrayLogic.findMax(array);
 
@@ -31,7 +33,7 @@ public class ArrayLogicTest {
     @Test
     public void testFindMaxShouldFindMaxWhenAllNumberAreZero() {
 
-        Array array = new Array(0,0,0);
+        Array<Integer> array = new Array<Integer>(0,0,0);
 
         int actual = arrayLogic.findMax(array);
 
@@ -41,7 +43,7 @@ public class ArrayLogicTest {
     @Test
     public void testFindMinShouldFindMaxWhenPositiveNumbersApplied() {
 
-        Array array = new Array(1,5,7);
+        Array<Integer> array = new Array<Integer>(1,5,7);
 
         int actual = arrayLogic.findMin(array);
 
@@ -51,7 +53,7 @@ public class ArrayLogicTest {
     @Test
     public void testFindMinShouldFindMaxWhenNegativeNumbersApplied() {
 
-        Array array = new Array(-1,-5,-7);
+        Array<Integer> array = new Array<Integer>(-1,-5,-7);
 
         int actual = arrayLogic.findMin(array);
 
@@ -61,7 +63,7 @@ public class ArrayLogicTest {
     @Test
     public void testFindMinShouldFindMaxWhenZeroNumbersApplied() {
 
-        Array array = new Array(0,0,0);
+        Array<Integer> array = new Array<Integer>(0,0,0);
 
         int actual = arrayLogic.findMin(array);
 
@@ -71,17 +73,17 @@ public class ArrayLogicTest {
     @Test
     public void testNegativeShouldDefineNegativeArrayWhenPositiveNumbersApplied() {
 
-        Array array = new Array(1,5,6);
+        Array<Integer> array = new Array<Integer>(1,5,6);
 
         boolean actual = arrayLogic.isNegative(array);
 
-        Assert.assertTrue(!actual);
+        Assert.assertFalse(actual);
     }
 
     @Test
     public void testNegativeShouldDefineNegativeArrayWhenNegativeNumbersApplied() {
 
-        Array array = new Array(-1,-5,-7);
+        Array<Integer> array = new Array<Integer>(-1,-5,-7);
 
         boolean actual = arrayLogic.isNegative(array);
 
@@ -91,57 +93,57 @@ public class ArrayLogicTest {
     @Test
     public void testNegativeShouldDefineNegativeArrayWhenZeroNumbersApplied() {
 
-        Array array = new Array(0,0,0);
+        Array<Integer> array = new Array<Integer>(0,0,0);
 
         boolean actual = arrayLogic.isNegative(array);
 
-        Assert.assertTrue(!actual);
+        Assert.assertFalse(actual);
     }
 
     @Test
     public void testNegativeShouldDefineNegativeArrayWhenDifferentNumbersApplied() {
 
-        Array array = new Array(1,0,-5);
+        Array<Integer> array = new Array<Integer>(1,0,-5);
 
         boolean actual = arrayLogic.isNegative(array);
 
-        Assert.assertTrue(!actual);
+        Assert.assertFalse(actual);
     }
 
     @Test
-    public void testfindAverageValueShouldFindAverageValueWhenPositiveNumbersApplied() {
+    public void testFindAverageValueShouldFindAverageValueWhenPositiveNumbersApplied() {
 
-        Array array = new Array(1,5,7);
+        Array<Integer> array = new Array<Integer>(1,5,7);
 
         double actual = arrayLogic.findAverageValue(array);
 
-        Assert.assertEquals(4.333,actual,0.001);
+        Assert.assertEquals(4.333,actual,delta);
     }
 
     @Test
-    public void testfindAverageValueShouldFindAverageValueWhenNegativeNumbersApplied() {
+    public void testFindAverageValueShouldFindAverageValueWhenNegativeNumbersApplied() {
 
-        Array array = new Array(-1,-5,-7);
+        Array<Integer> array = new Array<Integer>(-1,-5,-7);
 
         double actual = arrayLogic.findAverageValue(array);
 
-        Assert.assertEquals(-4.333,actual,0.001);
+        Assert.assertEquals(-4.333,actual,delta);
     }
 
     @Test
-    public void testfindAverageValueShouldFindAverageValueWhenZeroNumbersApplied() {
+    public void testFindAverageValueShouldFindAverageValueWhenZeroNumbersApplied() {
 
-        Array array = new Array(0,0,0);
+        Array<Integer> array = new Array<Integer>(0,0,0);
 
         double actual = arrayLogic.findAverageValue(array);
 
-        Assert.assertEquals(0,actual,0.001);
+        Assert.assertEquals(0,actual,delta);
     }
 
     @Test
-    public void testfindSumShouldFindSumWhenPositiveNumbersApplied() {
+    public void testFindSumShouldFindSumWhenPositiveNumbersApplied() {
 
-        Array array = new Array(1,5,7);
+        Array<Integer> array = new Array<Integer>(1,5,7);
 
         int actual = arrayLogic.findSum(array);
 
@@ -149,9 +151,9 @@ public class ArrayLogicTest {
     }
 
     @Test
-    public void testfindSumShouldFindSumWhenNegativeNumbersApplied() {
+    public void testFindSumShouldFindSumWhenNegativeNumbersApplied() {
 
-        Array array = new Array(-1,-5,-7);
+        Array<Integer> array = new Array<Integer>(-1,-5,-7);
 
         int actual = arrayLogic.findSum(array);
 
@@ -159,9 +161,9 @@ public class ArrayLogicTest {
     }
 
     @Test
-    public void testfindSumShouldFindSumWhenZeroNumbersApplied() {
+    public void testFindSumShouldFindSumWhenZeroNumbersApplied() {
 
-        Array array = new Array(0,0,0);
+        Array<Integer> array = new Array<Integer>(0,0,0);
 
         int actual = arrayLogic.findSum(array);
 
@@ -169,42 +171,82 @@ public class ArrayLogicTest {
     }
 
     @Test
-    public void testcountPositiveNegativeShouldСountPositiveNegativeWhenPositiveNumbersApplied() {
+    public void testCountPositiveShouldСountPositiveWhenPositiveNumbersApplied() {
 
-        Array array = new Array(1,5,7);
+        Array<Integer> array = new Array<Integer>(1,5,7);
 
-        int[] actual = arrayLogic.countPositiveNegative(array);
+        int actual = arrayLogic.countPositive(array);
 
-        Assert.assertArrayEquals(new int[]{3, 0},actual);
+        Assert.assertEquals(3,actual);
     }
 
     @Test
-    public void testcountPositiveNegativeShouldСountPositiveNegativeWhenNegativeNumbersApplied() {
+    public void testCountPositiveShouldСountPositiveWhenNegativeNumbersApplied() {
 
-        Array array = new Array(-1,-5,-7);
+        Array<Integer> array = new Array<Integer>(-1,-5,-7);
 
-        int[] actual = arrayLogic.countPositiveNegative(array);
+        int actual = arrayLogic.countPositive(array);
 
-        Assert.assertArrayEquals(new int[]{0, 3},actual);
+        Assert.assertEquals(0,actual);
     }
 
     @Test
-    public void testcountPositiveNegativeShouldСountPositiveNegativeWhenZeroNumbersApplied() {
+    public void testCountPositiveShouldСountPositiveWhenDifferentNumbersApplied() {
 
-        Array array = new Array(0,0,0);
+        Array<Integer> array = new Array<Integer>(-1,4,-7);
 
-        int[] actual = arrayLogic.countPositiveNegative(array);
+        int actual = arrayLogic.countPositive(array);
 
-        Assert.assertArrayEquals(new int[]{0, 0},actual);
+        Assert.assertEquals(1,actual);
     }
 
     @Test
-    public void testcountPositiveNegativeShouldСountPositiveNegativeWhenDifferentNumbersApplied() {
+    public void testCountPositiveShouldСountPositiveWhenZeroNumbersApplied() {
 
-        Array array = new Array(1,0,-5);
+        Array<Integer> array = new Array<Integer>(0,0,0);
 
-        int[] actual = arrayLogic.countPositiveNegative(array);
+        int actual = arrayLogic.countPositive(array);
 
-        Assert.assertArrayEquals(new int[]{1, 1},actual);
+        Assert.assertEquals(0,actual);
+    }
+
+    @Test
+    public void testCountNegativeShouldСountPositiveWhenPositiveNumbersApplied() {
+
+        Array<Integer> array = new Array<Integer>(1,5,7);
+
+        int actual = arrayLogic.countNegative(array);
+
+        Assert.assertEquals(0,actual);
+    }
+
+    @Test
+    public void testCountNegativeShouldСountPositiveWhenNegativeNumbersApplied() {
+
+        Array<Integer> array = new Array<Integer>(-1,-5,-7);
+
+        int actual = arrayLogic.countNegative(array);
+
+        Assert.assertEquals(3,actual);
+    }
+
+    @Test
+    public void testCountNegativeShouldСountPositiveWhenDifferentNumbersApplied() {
+
+        Array<Integer> array = new Array<Integer>(-1,4,-7);
+
+        int actual = arrayLogic.countNegative(array);
+
+        Assert.assertEquals(2,actual);
+    }
+
+    @Test
+    public void testCountNegativeShouldСountPositiveWhenZeroNumbersApplied() {
+
+        Array<Integer> array = new Array<Integer>(0,0,0);
+
+        int actual = arrayLogic.countNegative(array);
+
+        Assert.assertEquals(0,actual);
     }
 }

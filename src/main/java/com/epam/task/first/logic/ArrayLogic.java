@@ -4,7 +4,7 @@ import com.epam.task.first.entities.Array;
 
 public class ArrayLogic {
 
-    public int findMax(Array array) {
+    public int findMax(Array<Integer> array) {
         int max = array.getElements().get(0);
 
         for(int element : array.getElements()) {
@@ -15,7 +15,7 @@ public class ArrayLogic {
         return max;
     }
 
-    public int findMin(Array array) {
+    public int findMin(Array<Integer> array) {
         int min = array.getElements().get(0);
 
         for(int element : array.getElements()) {
@@ -26,7 +26,7 @@ public class ArrayLogic {
         return min;
     }
 
-    public boolean isNegative(Array array) {
+    public boolean isNegative(Array<Integer> array) {
         int countNegative = 0;
         for(int element: array.getElements()) {
             if(element < 0) {
@@ -36,7 +36,7 @@ public class ArrayLogic {
         return countNegative == array.getElements().size();
     }
 
-    public double findAverageValue(Array array) {
+    public double findAverageValue(Array<Integer> array) {
         if(array.getElements().size() == 0) {
             throw new IllegalArgumentException("Array is empty");
         }
@@ -49,7 +49,7 @@ public class ArrayLogic {
         return sum/array.getElements().size();
     }
 
-    public int findSum(Array array) {
+    public int findSum(Array<Integer> array) {
         int sum = 0;
 
         for(int element : array.getElements()) {
@@ -58,22 +58,25 @@ public class ArrayLogic {
         return sum;
     }
 
-    public int[] countPositiveNegative(Array array) {
-        int[] quantity = new int[2];
+    public int countPositive(Array<Integer> array) {
         int positive = 0;
+
+        for(int element: array.getElements()) {
+            if (element > 0) {
+                positive++;
+            }
+        }
+        return positive;
+    }
+
+    public int countNegative(Array<Integer> array) {
         int negative = 0;
 
         for(int element: array.getElements()) {
-            if(element > 0) {
-                positive++;
-            }
-            else if(element < 0) {
+            if (element < 0) {
                 negative++;
             }
         }
-        quantity[0] = positive;
-        quantity[1] = negative;
-
-        return quantity;
+        return negative;
     }
 }
